@@ -15,7 +15,7 @@ return new Config(
         ],   
         
         'url' => [
-            'baseUrl' => 'http://oidc.local/',
+            'baseUrl' => 'http://oauth.local/',
         ],
         
         'application' => [
