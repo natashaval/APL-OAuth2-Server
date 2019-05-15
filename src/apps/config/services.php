@@ -40,6 +40,20 @@ $di['url'] = function() use ($config, $di) {
 	return $url;
 };
 
+$di->setShared('database', function() use ($config) {
+    $class = 'Phalcon\Db\Adapter\Pdo\\' . $config->database->adapter;
+    $params = [
+        'host'     => $config->database->host,
+        'username' => $config->database->username,
+        'password' => $config->database->password,
+        'dbname'   => $config->database->dbname,
+        'charset'  => $config->database->charset
+    ];
+
+    $connection = new $class($params);
+    return $connection;
+});
+
 $di['userService'] = function () use ($config, $di) {
     $repository = new UserRepository($di);
     return new UserService($repository);

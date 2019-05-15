@@ -10,13 +10,15 @@ namespace App\User\Repositories;
 
 use Domain\User\Entities\UserEntity;
 use Domain\User\Repositories\UserRepositoryInterface;
+use App\User\Repositories\BaseRepository;
 
-class UserRepository implements UserRepositoryInterface
+class UserRepository extends BaseRepository implements UserRepositoryInterface
 {
     public function getAll()
     {
         // TODO: Implement getAll() method.
-        $users = $this->db->fetchAll("SELECT * FROM users", \Phalcon\Db::FETCH_ASSOC);
+        $conn = $this->getConnection();
+        $users = $conn->fetchAll("SELECT * FROM users", \Phalcon\Db::FETCH_ASSOC);
         return $users;
 
     }
@@ -24,7 +26,8 @@ class UserRepository implements UserRepositoryInterface
     public function getById($id)
     {
         // TODO: Implement getById() method.
-        $user = $this->db->fetchOne("SELECT * FROM users WHERE id = :id",
+        $conn = $this->getConnection();
+        $user = $conn->fetchOne("SELECT * FROM users WHERE id = :id",
             \Phalcon\Db::FETCH_ASSOC,
             [
                 "id" => $id
