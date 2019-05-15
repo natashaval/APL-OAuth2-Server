@@ -16,7 +16,7 @@
     
     require_once APP_PATH . '/Bootstrap.php';
     
-    $app = new Bootstrap('oauth'); # menyambungkan dengan Phalcon
+    $app = new Bootstrap('user'); # menyambungkan dengan Phalcon
     
     $app->init();
 

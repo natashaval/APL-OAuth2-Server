@@ -9,6 +9,9 @@ use Phalcon\Mvc\View;
 use Phalcon\Flash\Direct as FlashDirect;
 use Phalcon\Flash\Session as FlashSession;
 
+use App\User\Repositories\UserRepository;
+use App\User\Services\UserService;
+
 $di['config'] = function() use ($config) {
 	return $config;
 };
@@ -35,6 +38,11 @@ $di['url'] = function() use ($config, $di) {
     $url->setBaseUri($config->url['baseUrl']);
 
 	return $url;
+};
+
+$di['userService'] = function () use ($config, $di) {
+    $repository = new UserRepository($di);
+    return new UserService($repository);
 };
 
 $di['voltService'] = function($view, $di) use ($config) { // menggunakan template volt seperti di Laravel -> blade

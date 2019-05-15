@@ -12,6 +12,17 @@ return array(
         'defaultController' => 'dashboard',
         'defaultAction' => 'index'
     ],
+
+    'user' => [
+        'namespace' => 'App\User',
+        'webControllerNamespace' => 'App\User\Controllers\Web',
+        'apiControllerNamespace' => 'App\User\Controllers\Api',
+        'className' => 'App\User\Module',
+        'path' => APP_PATH . '/modules/User/Module.php',
+        'defaultRouting' => true,
+        'defaultController' => 'dashboard',
+        'defaultAction' => 'index'
+    ]
 );
 
 ?>

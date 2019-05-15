@@ -7,17 +7,18 @@ return new Config(
         'mode' => 'DEVELOPMENT', //DEVELOPMENT, PRODUCTION, DEMO
 
         'database' => [
-            'adapter' => 'Phalcon\Db\Adapter\Pdo\Sqlsrv',
+            'adapter' => 'Mysql',
             'host' => 'localhost',
-            'username' => 'user',
-            'password' => 'pass',
-            'dbname' => 'dbname'
-        ],   
-        
-        'url' => [
-            'baseUrl' => 'http://oidc.local/',
+            'username' => 'root',
+            'password' => '',
+            'dbname' => 'aplexam',
+            'charset' => 'utf8',
         ],
-        
+
+        'url' => [
+            'baseUrl' => 'http://exam.local/',
+        ],
+
         'application' => [
             'libraryDir' => APP_PATH . "/lib/",
             'cacheDir' => APP_PATH . "/cache/",
