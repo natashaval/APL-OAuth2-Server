@@ -9,6 +9,7 @@
 namespace App\User\Controllers\Web;
 
 
+use Domain\User\Entities\UserEntity;
 use Phalcon\Http\Response;
 
 
@@ -28,26 +29,43 @@ class UserController extends BaseController
         echo $hasService;
     }
 
-    public function jsonAction(){
-//        $this->view->disable();
-//
-//        $response = new Response();
-//        $response->setContentType('application/json', 'UTF-8');
-//        $response->setJsonContent(array('status' => 'success', 'message' => 'coba dari usercontroller JSON'));
-//        return $response;
+    public function indexAction() {
+        if ($this->request->isPost()){
+            $this->view->disable();
+            $data = json_decode($this->request->getRawBody(),true);
+            $newUser = new UserEntity();
+            $newUser->setName($data["name"]);
+            $newUser->setPassword($data["password"]);
+            if (isset($data["otpkey"])) $newUser->setOtpkey($data["otpkey"]);
+            $result = $this->userService->createUser($newUser);
+            if ($result) return $this->sendJson(array('status' => 'success', 'message' => 'User has been created!'));
+            else return $this->sendJson(array('status' => 'failed', 'message' => 'Failed to create user!'));
+        }
 
-        $data = array('status' => 'success', 'message' => 'coba dari basecontroller');
-        return $this->sendJson($data);
+        else if ($this->request->isGet()) {
+            $data = $this->userService->getAll();
+            return $this->sendJson($data);
+        }
     }
 
-    public function getAllAction() {
-        $data = $this->userService->getAll();
-        return $this->sendJson($data);
-    }
+    public function idAction($id) {
+        if ($this->request->isGet()) {
+            $user = $this->userService->getById($id);
+            if (!$user) {
+                $this->response->setStatusCode(404);
+                $this->response->setJsonContent(
+                    array('status' => 'Not Found', 'message' => 'User is not found!'));
+                return $this->response;
+            } else {
+                return $this->sendJson($user);
+            }
+        }
+        elseif ($this->request->isDelete()) {
+            $result = $this->userService->deleteById($id);
+            if ($result) return $this->sendJson(array('status' => 'success', 'message' => 'User has been deleted!'));
+            else return $this->sendJson(array('status' => 'failed', 'message' => 'Failed to delete user!'));
 
-    public function getByIdAction($id) {
-        $data = $this->userService->getById($id);
-        return $this->sendJson($data);
+        }
     }
 
 

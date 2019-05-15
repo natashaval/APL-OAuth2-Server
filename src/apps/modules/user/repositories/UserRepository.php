@@ -11,6 +11,7 @@ namespace App\User\Repositories;
 use Domain\User\Entities\UserEntity;
 use Domain\User\Repositories\UserRepositoryInterface;
 use App\User\Repositories\BaseRepository;
+use Phalcon\Db\Column;
 
 class UserRepository extends BaseRepository implements UserRepositoryInterface
 {
@@ -33,17 +34,41 @@ class UserRepository extends BaseRepository implements UserRepositoryInterface
                 "id" => $id
             ]
             );
-        return $user;
+        if ($user != null) return $user;
+        else return false;
     }
 
     public function createUser(UserEntity $user)
     {
         // TODO: Implement createUser() method.
+        $conn = $this->getConnection();
+        $newUser = $conn->insert(
+            "users", // table
+            [$user->getName(), $user->getPassword(), $user->getOtpkey()], // value
+            ["name", "password", "otpkey"] // field
+        );
+
+        return $newUser;
     }
 
     public function deleteById($id)
     {
         // TODO: Implement deleteUser() method.
+        $conn = $this->getConnection();
+        $stmt = $conn->prepare(
+            "DELETE FROM users WHERE id =:id"
+        );
+
+        $result = $conn->executePrepared($stmt,
+            [
+                "id" => $id
+            ],
+            [
+                "id" => COLUMN::BIND_PARAM_INT
+            ]);
+
+        return true;
+
     }
 
     public function updateById($id, UserEntity $user)

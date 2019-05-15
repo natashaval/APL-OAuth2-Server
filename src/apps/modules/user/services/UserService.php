@@ -8,6 +8,7 @@
 
 namespace App\User\Services;
 
+use Domain\User\Entities\UserEntity;
 use Domain\User\Services\UserServiceInterface;
 use Domain\User\Repositories\UserRepositoryInterface;
 
@@ -32,6 +33,24 @@ class UserService implements UserServiceInterface
         // TODO: Implement getAll() method.
         $users = $this->userRepository->getAll();
         return $users;
+    }
+
+    public function createUser(UserEntity $user)
+    {
+        // TODO: Implement createUser() method.
+        $newUser = $this->userRepository->createUser($user);
+        return $newUser;
+    }
+
+    public function deleteById($id)
+    {
+        // TODO: Implement deleteById() method.
+        $user = $this->getById($id);
+        if ($user) {
+            $result = $this->userRepository->deleteById($id);
+            return true;
+        }
+        else return false;
     }
 
 }
