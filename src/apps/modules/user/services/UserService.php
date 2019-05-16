@@ -8,6 +8,7 @@
 
 namespace App\User\Services;
 
+use chillerlan\QRCode\QRCode;
 use Domain\User\Entities\UserEntity;
 use Domain\User\Services\UserServiceInterface;
 use Domain\User\Repositories\UserRepositoryInterface;
@@ -51,6 +52,12 @@ class UserService implements UserServiceInterface
             return true;
         }
         else return false;
+    }
+
+    public function generateQR($data)
+    {
+        // TODO: Implement generateQR() method.
+        return (new QRCode())->render($data);
     }
 
 }

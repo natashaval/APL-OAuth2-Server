@@ -16,4 +16,6 @@ interface UserServiceInterface
     public function getById($id);
     public function createUser(UserEntity $user);
     public function deleteById($id);
+
+    public function generateQR($data);
 }

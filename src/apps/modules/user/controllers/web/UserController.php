@@ -48,7 +48,8 @@ class UserController extends BaseController
         }
     }
 
-    public function idAction($id) {
+    public function idAction($id)
+    {
         if ($this->request->isGet()) {
             $user = $this->userService->getById($id);
             if (!$user) {
@@ -59,14 +60,24 @@ class UserController extends BaseController
             } else {
                 return $this->sendJson($user);
             }
-        }
-        elseif ($this->request->isDelete()) {
+        } elseif ($this->request->isDelete()) {
             $result = $this->userService->deleteById($id);
             if ($result) return $this->sendJson(array('status' => 'success', 'message' => 'User has been deleted!'));
             else return $this->sendJson(array('status' => 'failed', 'message' => 'Failed to delete user!'));
 
         }
     }
+
+        public function generateAction($id){
+            if ($this->request->isGet()){
+                $user = $this->userService->getById($id);
+//                echo implode($user);
+                $qrCode = $this->userService->generateQR(implode($user));
+//                echo $qrCode;
+                $this->view->setVar("qrCode", $qrCode);
+                $this->view->pick('dashboard/qr');
+            }
+        }
 
 
 }
