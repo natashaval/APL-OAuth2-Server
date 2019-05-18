@@ -19,6 +19,7 @@ class UserFactory
     public static function create() {
         $user = new UserEntity();
         $user->setRegDate(date("Y-m-d"));
+        $user->setLevel(0);
         return $user;
     }
 }

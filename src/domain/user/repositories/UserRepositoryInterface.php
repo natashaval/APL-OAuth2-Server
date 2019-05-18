@@ -15,5 +15,4 @@ interface UserRepositoryInterface
     public function getById($id);
     public function createUser(UserEntity $user);
     public function deleteById($id);
-    public function updateById($id, UserEntity $user);
 }

@@ -10,6 +10,7 @@ namespace App\User\Controllers\Web;
 
 
 use App\User\Factories\UserFactory;
+use App\User\Models\UserResponse;
 use App\User\Presenters\UserPresenter;
 use Domain\User\Entities\UserEntity;
 use Phalcon\Http\Response;
@@ -69,7 +70,9 @@ class UserController extends BaseController
                     array('status' => 'Not Found', 'message' => 'User is not found!'));
                 return $this->response;
             } else {
-                return $this->sendJson($user);
+//                return $this->sendJson($user);
+                $userResponse = UserPresenter::convertGetResponse($user, new UserResponse());
+                return $this->sendJson($userResponse);
             }
         } elseif ($this->request->isDelete()) {
             $result = $this->userService->deleteById($id);

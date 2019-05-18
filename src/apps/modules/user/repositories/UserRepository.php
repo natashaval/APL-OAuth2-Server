@@ -19,7 +19,7 @@ class UserRepository extends BaseRepository implements UserRepositoryInterface
     {
         // TODO: Implement getAll() method.
         $conn = $this->getConnection();
-        $users = $conn->fetchAll("SELECT * FROM users", \Phalcon\Db::FETCH_ASSOC);
+        $users = $conn->fetchAll("SELECT * FROM users WHERE enabled = TRUE", \Phalcon\Db::FETCH_ASSOC);
         return $users;
 
     }
@@ -63,7 +63,7 @@ class UserRepository extends BaseRepository implements UserRepositoryInterface
         // TODO: Implement deleteUser() method.
         $conn = $this->getConnection();
         $stmt = $conn->prepare(
-            "DELETE FROM users WHERE id =:id"
+            "UPDATE `users` SET enabled=FALSE WHERE id= :id"
         );
 
         $result = $conn->executePrepared($stmt,
@@ -78,8 +78,4 @@ class UserRepository extends BaseRepository implements UserRepositoryInterface
 
     }
 
-    public function updateById($id, UserEntity $user)
-    {
-        // TODO: Implement updateUser() method.
-    }
 }
