@@ -9,6 +9,8 @@
 namespace App\User\Controllers\Web;
 
 
+use App\User\Factories\UserFactory;
+use App\User\Presenters\UserPresenter;
 use Domain\User\Entities\UserEntity;
 use Phalcon\Http\Response;
 
@@ -33,13 +35,22 @@ class UserController extends BaseController
         if ($this->request->isPost()){
             $this->view->disable();
             $data = json_decode($this->request->getRawBody(),true);
-            $newUser = new UserEntity();
-            $newUser->setName($data["name"]);
-            $newUser->setPassword($data["password"]);
-            if (isset($data["otpkey"])) $newUser->setOtpkey($data["otpkey"]);
+
+//            echo $data["name"];
+//            return $this->sendJson($data);
+//            $newUser = new UserEntity();
+//            $newUser->setName($data["name"]);
+//            $newUser->setPassword($data["password"]);
+//            if (isset($data["otpkey"])) $newUser->setOtpkey($data["otpkey"]);
+
+
+            $factoryUser = UserFactory::create();
+            $newUser = UserPresenter::convertReturnData($data, $factoryUser);
+
             $result = $this->userService->createUser($newUser);
             if ($result) return $this->sendJson(array('status' => 'success', 'message' => 'User has been created!'));
             else return $this->sendJson(array('status' => 'failed', 'message' => 'Failed to create user!'));
+
         }
 
         else if ($this->request->isGet()) {

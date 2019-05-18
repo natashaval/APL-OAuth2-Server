@@ -9,6 +9,7 @@
     
     define('BASE_PATH', dirname(__DIR__));
     define('APP_PATH', BASE_PATH . '/apps');
+    define('DOMAIN_PATH', BASE_PATH . '/domain');
     
     date_default_timezone_set('Asia/Jakarta');
     

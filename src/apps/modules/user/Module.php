@@ -17,10 +17,12 @@ class Module implements ModuleDefinitionInterface
             'App\User\Repositories' => __DIR__ . '/repositories',
             'App\User\Models' => __DIR__ . '/models',
             'App\User\Services' => __DIR__ . '/services',
+            'App\User\Presenters' => __DIR__ . '/presenters',
+            'App\User\Factories' => __DIR__ . '/factories'
 
-            'Domain\User\Repositories' => __DIR__ . '/domain/repositories',
-            'Domain\User\Entities' => __DIR__ . '/domain/entities',
-            'Domain\User\Services' => __DIR__ . '/domain/services'
+//            'Domain\User\Repositories' => __DIR__ . '/domain/repositories',
+//            'Domain\User\Entities' => __DIR__ . '/domain/entities',
+//            'Domain\User\Services' => __DIR__ . '/domain/services'
         ]);
 
         $loader->register();

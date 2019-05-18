@@ -20,7 +20,7 @@ return new Config(
         ],
 
         'application' => [
-            'libraryDir' => APP_PATH . "/lib/",
+            'libraryDir' => APP_PATH . "/library/",
             'cacheDir' => APP_PATH . "/cache/",
         ],
 

@@ -10,7 +10,7 @@ use Phalcon\Flash\Direct as FlashDirect;
 use Phalcon\Flash\Session as FlashSession;
 
 use App\User\Repositories\UserRepository;
-use App\User\Services\UserService;
+use Domain\User\Services\UserService;
 
 $di['config'] = function() use ($config) {
 	return $config;
@@ -54,7 +54,7 @@ $di->setShared('database', function() use ($config) {
     return $connection;
 });
 
-$di['userService'] = function () use ($config, $di) {
+$di['userService'] = function () use ($di) {
     $repository = new UserRepository($di);
     return new UserService($repository);
 };

@@ -44,8 +44,15 @@ class UserRepository extends BaseRepository implements UserRepositoryInterface
         $conn = $this->getConnection();
         $newUser = $conn->insert(
             "users", // table
-            [$user->getName(), $user->getPassword(), $user->getOtpkey()], // value
-            ["name", "password", "otpkey"] // field
+            [ // value
+                $user->getName(),
+                $user->getPassword(),
+                $user->getEmail(),
+                $user->getRegDate(),
+                $user->getRegNumber(),
+                $user->getOtpkey()
+            ],
+            ["name", "password", "email", "registration_date","registration_number","otpkey"] // field
         );
 
         return $newUser;
