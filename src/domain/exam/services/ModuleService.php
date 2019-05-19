@@ -37,6 +37,9 @@ class ModuleService
     }
 
     public function deleteById($id) {
+        $exist = $this->moduleRepository->getById($id);
+        if ($exist) return false;
+
         $result = $this->moduleRepository->deleteById($id);
         return $result;
     }

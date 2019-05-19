@@ -63,9 +63,6 @@ class ModuleRepository extends BaseRepository implements ModuleRepositoryInterfa
         if ($count["total"] > 0) return false; // check if there is foreign key in other table
 
         else {
-            $exist = $this->getById($id);
-            if (!$exist) return false; // check if id is not exists
-
             $stmt = $conn->prepare("UPDATE `modules` SET enabled = FALSE WHERE id = :id");
             $result = $conn->executePrepared(
                 $stmt,

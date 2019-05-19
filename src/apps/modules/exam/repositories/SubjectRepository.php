@@ -12,6 +12,7 @@ namespace App\Exam\Repositories;
 use Domain\Exam\Entities\SubjectEntity;
 use Domain\Exam\Repositories\SubjectRepositoryInterface;
 use Phalcon\Db\Column;
+use Phalcon\Db\Result\Pdo;
 
 class SubjectRepository extends BaseRepository implements SubjectRepositoryInterface
 {
@@ -39,7 +40,7 @@ class SubjectRepository extends BaseRepository implements SubjectRepositoryInter
     {
         // TODO: Implement createSubject() method.
         $conn = $this->getConnection();
-        $newModule = $conn->insert (
+        $newSubject = $conn->insert (
             "subjects",
             [
                 $subject->getModule(),
@@ -48,7 +49,7 @@ class SubjectRepository extends BaseRepository implements SubjectRepositoryInter
             ],
             ["module_id", "name", "description"]
         );
-        return $newModule;
+        return $newSubject;
     }
 
     public function deleteById($id)
@@ -59,5 +60,20 @@ class SubjectRepository extends BaseRepository implements SubjectRepositoryInter
     public function updateSubject($id, SubjectEntity $subject)
     {
         // TODO: Implement updateSubject() method.
+        $conn = $this->getConnection();
+        $updateSubject = $conn->update(
+            "subjects",
+            ["module_id", "name", "description"], //fields
+            [ // values
+                $subject->getModule(),
+                $subject->getName(),
+                $subject->getDescription()
+            ],
+            [
+                "conditions" => "id = ?",
+                "bind" => [$id]
+            ]
+        );
+        return $updateSubject;
     }
 }

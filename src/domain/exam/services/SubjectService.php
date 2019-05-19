@@ -48,6 +48,8 @@ class SubjectService
 //        https://stackoverflow.com/questions/15810257/create-nested-json-object-in-php
 
         $subjectQ = $this->subjectRepository->getById($id);
+        if (!$subjectQ) return false;
+
         $moduleQ = $this->moduleRepository->getById($subjectQ["module_id"]);
 ////
 //        $subject = SubjectMapper::mapToSubjectEntity($subjectQ, $moduleQ);
@@ -62,5 +64,13 @@ class SubjectService
         return $newSubject;
     }
 
+    public function updateSubject($id, SubjectEntity $subject) {
+        $exist = $this->subjectRepository->getById($id);
+        if(!$exist) return false;
+        else {
+            $updateSubject = $this->subjectRepository->updateSubject($id, $subject);
+            return $updateSubject;
+        }
+    }
 
 }

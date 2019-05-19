@@ -15,7 +15,7 @@ class SubjectPresenter
 {
     public static function convertCreate($data, SubjectEntity $entity){
         $entity->setName($data["name"]);
-        $entity->setDescription($data["description"]);
+        if(isset($data["description"])) $entity->setDescription($data["description"]);
         $entity->setModule($data["module_id"]);
         return $entity;
     }

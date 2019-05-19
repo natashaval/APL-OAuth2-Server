@@ -30,7 +30,7 @@ class ModuleController extends BaseController
             $data = json_decode($this->request->getRawBody(),true);
             $newModule = ModulePresenter::convertCreate($data, new ModuleEntity());
             $result = $this->moduleService->createModule($newModule);
-            if ($result) return $this->sendJson(200, array('status' => 'success', 'message' => 'Module has been created!'));
+            if ($result) return $this->sendJson(201, array('status' => 'success', 'message' => 'Module has been created!'));
         }
         else {
             return $this->sendJson(400, array("status" => "failed", "message" => "No mapping found!"));
@@ -49,8 +49,6 @@ class ModuleController extends BaseController
         }
         else if ($this->request->isDelete()){
             $result = $this->moduleService->deleteById($id);
-//            var_dump($result);
-//            return $result;
             if (!$result) return $this->sendJson(400, array('status' => 'failed', 'message' => 'Failed to delete module!'));
             else return $this->sendJson(200, array('status' => 'success', 'message' => 'Module has been deleted!'));
 
