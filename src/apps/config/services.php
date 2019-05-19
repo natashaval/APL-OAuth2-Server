@@ -13,7 +13,9 @@ use App\User\Repositories\UserRepository;
 use Domain\User\Services\UserService;
 
 use App\Exam\Repositories\ModuleRepository;
-use \Domain\Exam\Services\ModuleService;
+use Domain\Exam\Services\ModuleService;
+use App\Exam\Repositories\SubjectRepository;
+use Domain\Exam\Services\SubjectService;
 
 $di['config'] = function() use ($config) {
 	return $config;
@@ -63,6 +65,12 @@ $di['userService'] = function () use ($di) {
 $di['moduleService'] = function () use ($di) {
     $repository  =new ModuleRepository($di);
     return new ModuleService($repository);
+};
+
+$di['subjectService'] = function () use ($di) {
+    $subjectRepository = new SubjectRepository($di);
+    $moduleRepository = new ModuleRepository($di);
+    return new SubjectService($subjectRepository, $moduleRepository);
 };
 
 $di['voltService'] = function($view, $di) use ($config) { // menggunakan template volt seperti di Laravel -> blade

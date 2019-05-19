@@ -14,7 +14,6 @@ class ModuleEntity
     private $id;
     private $name;
     private $enabled;
-    private $user;
 
     /**
      * @return int
@@ -63,22 +62,4 @@ class ModuleEntity
     {
         $this->enabled = $enabled;
     }
-
-    /**
-     * @return UserEntity
-     */
-    public function getUser()
-    {
-        return $this->user;
-    }
-
-    /**
-     * @param UserEntity $user
-     */
-    public function setUser($user)
-    {
-        $this->user = $user;
-    } // connect to UserEntity
-
-
 }

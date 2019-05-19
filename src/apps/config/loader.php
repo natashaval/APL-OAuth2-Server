@@ -16,7 +16,8 @@ $loader = new \Phalcon\Loader();
       'Domain\Exam\Entities' => DOMAIN_PATH . '/exam/entities',
       'Domain\Exam\Repositories' => DOMAIN_PATH . '/exam/repositories',
       'Domain\Exam\Services' => DOMAIN_PATH . '/exam/services',
-      'Domain\Exam\Libraries' => DOMAIN_PATH . '/exam/libraries'
+      'Domain\Exam\Mappers' => DOMAIN_PATH . '/exam/mappers',
+
 
 ));
 

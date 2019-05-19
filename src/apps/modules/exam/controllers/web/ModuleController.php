@@ -22,7 +22,8 @@ class ModuleController extends BaseController
     public function indexAction(){
         if($this->request->isGet()) {
             $modules = $this->moduleService->getAll();
-            return $this->sendJson($modules);
+            var_dump($modules);
+//            return $this->sendJson($modules);
         }
         else if ($this->request->isPost()) {
             $this->view->disable();
@@ -33,7 +34,9 @@ class ModuleController extends BaseController
         }
 
         else {
-            return "No mapping found!";
+            $this->response->setStatusCode(400);
+            $this->response->setJsonContent(array("status" => "failed", "message" => "No mapping found!"));
+            return $this->response;
         }
     }
 
@@ -43,7 +46,7 @@ class ModuleController extends BaseController
             if (!$module) {
                 $this->response->setStatusCode(404);
                 $this->response->setJsonContent(
-                    array('status' => 'Not Found', 'message' => 'Module is not found!'));
+                    array('status' => 'failed', 'message' => 'Module is not found!'));
                 return $this->response;
             } else {
                 return $this->sendJson($module);
@@ -54,7 +57,7 @@ class ModuleController extends BaseController
             if ($result) return $this->sendJson(array('status' => 'success', 'message' => 'Module has been deleted!'));
             else {
                 $this->response->setStatusCode(404);
-                $this->response->setJsonContent(array('status' => 'success', 'message' => 'Module to be deleted is not found!'));
+                $this->response->setJsonContent(array('status' => 'failed', 'message' => 'Module to be deleted is not found!'));
                 return $this->response;
             }
         }

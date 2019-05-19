@@ -20,4 +20,13 @@ class BaseController extends Controller
         $response->setJsonContent($data);
         return $response;
     }
+
+    public function sendObject($data) {
+        $this->view->disable();
+        $response = new Response();
+        $response->setStatusCode(200);
+        $response->setContentType('application/json', 'UTF-8');
+        $response->setContent($data);
+        return $response;
+    }
 }
