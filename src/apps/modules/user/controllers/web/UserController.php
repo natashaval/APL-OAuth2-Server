@@ -46,7 +46,7 @@ class UserController extends BaseController
 
 
             $factoryUser = UserFactory::create();
-            $newUser = UserPresenter::convertReturnData($data, $factoryUser);
+            $newUser = UserPresenter::convertCreateUser($data, $factoryUser);
 
             $result = $this->userService->createUser($newUser);
             if ($result) return $this->sendJson(array('status' => 'success', 'message' => 'User has been created!'));

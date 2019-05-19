@@ -12,6 +12,9 @@ use Phalcon\Flash\Session as FlashSession;
 use App\User\Repositories\UserRepository;
 use Domain\User\Services\UserService;
 
+use App\Exam\Repositories\ModuleRepository;
+use \Domain\Exam\Services\ModuleService;
+
 $di['config'] = function() use ($config) {
 	return $config;
 };
@@ -34,9 +37,7 @@ $di['dispatcher'] = function() use ($di, $defaultModule) {
 
 $di['url'] = function() use ($config, $di) {
 	$url = new \Phalcon\Mvc\Url();
-
     $url->setBaseUri($config->url['baseUrl']);
-
 	return $url;
 };
 
@@ -57,6 +58,11 @@ $di->setShared('database', function() use ($config) {
 $di['userService'] = function () use ($di) {
     $repository = new UserRepository($di);
     return new UserService($repository);
+};
+
+$di['moduleService'] = function () use ($di) {
+    $repository  =new ModuleRepository($di);
+    return new ModuleService($repository);
 };
 
 $di['voltService'] = function($view, $di) use ($config) { // menggunakan template volt seperti di Laravel -> blade

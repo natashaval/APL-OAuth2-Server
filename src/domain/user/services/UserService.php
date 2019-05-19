@@ -13,7 +13,7 @@ use Domain\User\Entities\UserEntity;
 use Domain\User\Services\UserServiceInterface;
 use Domain\User\Repositories\UserRepositoryInterface;
 
-class UserService implements UserServiceInterface
+class UserService
 {
     private $userRepository;
 

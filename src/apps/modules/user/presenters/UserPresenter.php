@@ -30,7 +30,7 @@ class UserPresenter
     }
     */
 
-    public static function convertReturnData($data, UserEntity $user) { // array data from
+    public static function convertCreateUser($data, UserEntity $user) { // array data from
         $user->setName($data["name"]);
         $user->setPassword(password_hash($data["password"], PASSWORD_DEFAULT));
         if (isset($data["email"])) $user->setEmail($data["email"]);

@@ -1,6 +1,6 @@
 <?php
 
-namespace App\User;
+namespace App\Exam;
 
 use Phalcon\DiInterface;
 use Phalcon\Loader;
@@ -13,12 +13,12 @@ class Module implements ModuleDefinitionInterface
         $loader = new Loader();
 
         $loader->registerNamespaces([
-            'App\User\Controllers' => __DIR__ . '/controllers',
-            'App\User\Repositories' => __DIR__ . '/repositories',
-            'App\User\Models' => __DIR__ . '/models',
-            'App\User\Services' => __DIR__ . '/services',
-            'App\User\Presenters' => __DIR__ . '/presenters',
-            'App\User\Factories' => __DIR__ . '/factories'
+            'App\Exam\Controllers' => __DIR__ . '/controllers',
+            'App\Exam\Repositories' => __DIR__ . '/repositories',
+            'App\Exam\Models' => __DIR__ . '/models',
+            'App\Exam\Services' => __DIR__ . '/services',
+            'App\Exam\Presenters' => __DIR__ . '/presenters',
+            'App\Exam\Factories' => __DIR__ . '/factories'
 
         ]);
 

@@ -1,7 +1,8 @@
 <?php
 
 return array(
- 
+
+    /*
     'oauth' => [
         'namespace' => 'App\Oauth',
         'webControllerNamespace' => 'App\Oauth\Controllers\Web',
@@ -12,7 +13,7 @@ return array(
         'defaultController' => 'dashboard',
         'defaultAction' => 'index'
     ],
-
+    */
     'user' => [
         'namespace' => 'App\User',
         'webControllerNamespace' => 'App\User\Controllers\Web',
@@ -22,6 +23,17 @@ return array(
         'defaultRouting' => true,
         'defaultController' => 'dashboard',
         'defaultAction' => 'index'
+    ],
+
+    'exam' => [
+    'namespace' => 'App\Exam',
+    'webControllerNamespace' => 'App\Exam\Controllers\Web',
+    'apiControllerNamespace' => 'App\Exam\Controllers\Api',
+    'className' => 'App\Exam\Module',
+    'path' => APP_PATH . '/modules/Exam/Module.php',
+    'defaultRouting' => true,
+    'defaultController' => 'dashboard',
+    'defaultAction' => 'index'
     ]
 );
 
