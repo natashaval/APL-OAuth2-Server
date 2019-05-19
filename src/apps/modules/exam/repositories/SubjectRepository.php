@@ -38,6 +38,17 @@ class SubjectRepository extends BaseRepository implements SubjectRepositoryInter
     public function createSubject(SubjectEntity $subject)
     {
         // TODO: Implement createSubject() method.
+        $conn = $this->getConnection();
+        $newModule = $conn->insert (
+            "subjects",
+            [
+                $subject->getModule(),
+                $subject->getName(),
+                $subject->getDescription()
+            ],
+            ["module_id", "name", "description"]
+        );
+        return $newModule;
     }
 
     public function deleteById($id)

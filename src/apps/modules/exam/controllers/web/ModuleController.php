@@ -22,21 +22,19 @@ class ModuleController extends BaseController
     public function indexAction(){
         if($this->request->isGet()) {
             $modules = $this->moduleService->getAll();
-            var_dump($modules);
-//            return $this->sendJson($modules);
+//            var_dump($modules);
+            return $this->sendJson(200, $modules);
         }
         else if ($this->request->isPost()) {
             $this->view->disable();
             $data = json_decode($this->request->getRawBody(),true);
-            $newModule = ModulePresenter::convertCreateModule($data, new ModuleEntity());
+            $newModule = ModulePresenter::convertCreate($data, new ModuleEntity());
             $result = $this->moduleService->createModule($newModule);
-            if ($result) return $this->sendJson(array('status' => 'success', 'message' => 'Module has been created!'));
+            if ($result) return $this->sendJson(200, array('status' => 'success', 'message' => 'Module has been created!'));
         }
-
         else {
-            $this->response->setStatusCode(400);
-            $this->response->setJsonContent(array("status" => "failed", "message" => "No mapping found!"));
-            return $this->response;
+            return $this->sendJson(400, array("status" => "failed", "message" => "No mapping found!"));
+
         }
     }
 
@@ -44,22 +42,19 @@ class ModuleController extends BaseController
         if($this->request->isGet()){
             $module = $this->moduleService->getById($id);
             if (!$module) {
-                $this->response->setStatusCode(404);
-                $this->response->setJsonContent(
-                    array('status' => 'failed', 'message' => 'Module is not found!'));
-                return $this->response;
+                return $this->sendJson(404, array('status' => 'failed', 'message' => 'Module is not found!'));
             } else {
-                return $this->sendJson($module);
+                return $this->sendJson(200, $module);
             }
         }
         else if ($this->request->isDelete()){
             $result = $this->moduleService->deleteById($id);
-            if ($result) return $this->sendJson(array('status' => 'success', 'message' => 'Module has been deleted!'));
-            else {
-                $this->response->setStatusCode(404);
-                $this->response->setJsonContent(array('status' => 'failed', 'message' => 'Module to be deleted is not found!'));
-                return $this->response;
-            }
+//            var_dump($result);
+//            return $result;
+            if (!$result) return $this->sendJson(400, array('status' => 'failed', 'message' => 'Failed to delete module!'));
+            else return $this->sendJson(200, array('status' => 'success', 'message' => 'Module has been deleted!'));
+
+
         }
     }
 

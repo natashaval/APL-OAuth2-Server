@@ -10,6 +10,7 @@ namespace App\Exam\Repositories;
 
 use Domain\Exam\Entities\ModuleEntity;
 use Domain\Exam\Repositories\ModuleRepositoryInterface;
+use Phalcon\Db;
 use Phalcon\Db\Column;
 
 class ModuleRepository extends BaseRepository implements ModuleRepositoryInterface
@@ -50,14 +51,34 @@ class ModuleRepository extends BaseRepository implements ModuleRepositoryInterfa
     {
         // TODO: Implement deleteById() method.
         $conn = $this->getConnection();
-        $stmt = $conn->prepare("UPDATE `modules` SET enabled = FALSE WHERE id = :id");
 
-        $result = $conn->executePrepared(
-            $stmt,
-            ["id" => $id],
-            ["id" => Column::BIND_PARAM_INT]
-        );
 
-        return true;
+        $count = $conn->fetchOne("SELECT COUNT(id) AS total FROM subjects WHERE module_id = :module_id",
+            Db::FETCH_ASSOC,
+            [ "module_id" => $id ],
+            [ "module_id" => Column::BIND_PARAM_INT]
+            );
+//        return $count["total"];
+
+        if ($count["total"] > 0) return false; // check if there is foreign key in other table
+
+        else {
+            $exist = $this->getById($id);
+            if (!$exist) return false; // check if id is not exists
+
+            $stmt = $conn->prepare("UPDATE `modules` SET enabled = FALSE WHERE id = :id");
+            $result = $conn->executePrepared(
+                $stmt,
+                ["id" => $id],
+                ["id" => Column::BIND_PARAM_INT]
+            );
+
+            if($result) return true;
+            else return false;
+        }
+
+        return false;
+
+
     }
 }

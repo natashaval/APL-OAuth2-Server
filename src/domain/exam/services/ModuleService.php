@@ -32,16 +32,12 @@ class ModuleService
     }
 
     public function createModule(ModuleEntity $module){
-        $module = $this->moduleRepository->createModule($module);
-        return $module;
+        $newModule = $this->moduleRepository->createModule($module);
+        return $newModule;
     }
 
     public function deleteById($id) {
-        $module = $this->getById($id);
-        if ($module) {
-            $this->moduleRepository->deleteById($id);
-            return true;
-        }
-        else return false;
+        $result = $this->moduleRepository->deleteById($id);
+        return $result;
     }
 }

@@ -57,5 +57,10 @@ class SubjectService
         return $subject;
     }
 
+    public function createSubject(SubjectEntity $subject) {
+        $newSubject = $this->subjectRepository->createSubject($subject);
+        return $newSubject;
+    }
+
 
 }

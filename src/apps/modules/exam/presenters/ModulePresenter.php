@@ -12,8 +12,8 @@ use \Domain\Exam\Entities\ModuleEntity;
 
 class ModulePresenter
 {
-    public static function convertCreateModule($data, ModuleEntity $module){
-        $module->setName($data["name"]);
-        return $module;
+    public static function convertCreate($data, ModuleEntity $entity){
+        $entity->setName($data["name"]);
+        return $entity;
     }
 }

@@ -9,6 +9,9 @@
 namespace App\Exam\Controllers\Web;
 
 
+use App\Exam\Presenters\SubjectPresenter;
+use Domain\Exam\Entities\SubjectEntity;
+
 class SubjectController extends BaseController
 {
     private $subjectService;
@@ -21,21 +24,26 @@ class SubjectController extends BaseController
         if($this->request->isGet()){
             $subjects = $this->subjectService->getAll();
             var_dump($subjects);
-            return $this->sendObject(json_encode($subjects));
+            return $this->sendObject(200, json_encode($subjects));
+        }
+
+        elseif ($this->request->isPost()) {
+            $this->view->disable();
+            $data = json_decode($this->request->getRawBody(),true);
+            $newSubject = SubjectPresenter::convertCreate($data, new SubjectEntity());
+            $result = $this->subjectService->createSubject($newSubject);
+            if ($result) return $this->sendJson(200, array('status' => 'success', 'message' => 'Subject has been created!'));
+        }
+        else {
+            return $this->sendJson(400, array("status" => "failed", "message" => "No mapping found!"));
         }
     }
 
     public function idAction($id) {
         if ($this->request->isGet()) {
-//            return $this->sendJson(array("status" => "success"));
             $subject = $this->subjectService->getById($id);
-//            return $subject;
-            return $this->sendObject(json_encode($subject));
-//            $dump = "var_dump(" + $subject + ");";
-//            return $dump;
-//            return json_encode($subject);
-//            var_dump($subject);
-
+            if ($subject) return $this->sendObject(200, json_encode($subject));
+            else return $this->sendJson(404, array("status" => "failed", "message" => "Subject not found!"));
         }
     }
 }

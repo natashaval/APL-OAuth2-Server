@@ -12,7 +12,7 @@ use Domain\Exam\Entities\SubjectEntity;
 
 class SubjectMapper
 {
-    public static function mapToSubjectEntity($subjectData, $moduleData) {
+    public static function mapToSubjectEntity($subjectData, $moduleData) { // TIDAK DIPAKAI
         $subject = new SubjectEntity();
         $subject->setId($subjectData["id"]);
         $subject->setName($subjectData["name"]);
