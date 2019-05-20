@@ -6,7 +6,7 @@
  * Time: 00:26
  */
 
-namespace App\User\Controllers\Web;
+namespace App\User\Controllers\Api;
 
 use Phalcon\Http\Response;
 use Phalcon\Mvc\Controller;

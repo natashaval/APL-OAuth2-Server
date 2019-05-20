@@ -5,6 +5,8 @@ Description:
 - An administrator manage modules, subjects,
 questions, answers, tests
 
+Api link: http://localhost/apl/APL-OAuth2-Server/src/:moduleName/api/:controller/:action/:param
+
 ## Groups
 - getAll
 - getById
@@ -30,5 +32,8 @@ questions, answers, tests
 - updateSubject
 
 ## Questions
+- getAll (array of Question objects + subject object)
+- getById (Question object + subject object)
+- createQuestion
 
 ## Answers

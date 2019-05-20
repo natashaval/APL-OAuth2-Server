@@ -6,7 +6,7 @@
  * Time: 21:31
  */
 
-namespace App\User\Controllers\Web;
+namespace App\User\Controllers\Api;
 
 
 use App\User\Factories\UserFactory;

@@ -11,6 +11,7 @@ namespace App\Exam\Repositories;
 
 use Domain\Exam\Entities\QuestionEntity;
 use Domain\Exam\Repositories\QuestionRepositoryInterface;
+use Phalcon\Db\Column;
 
 class QuestionRepository extends BaseRepository implements QuestionRepositoryInterface
 {

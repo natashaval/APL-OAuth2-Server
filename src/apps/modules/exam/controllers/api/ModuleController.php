@@ -6,7 +6,7 @@
  * Time: 21:14
  */
 
-namespace App\Exam\Controllers\Web;
+namespace App\Exam\Controllers\Api;
 
 use App\Exam\Presenters\ModulePresenter;
 use Domain\Exam\Entities\ModuleEntity;
@@ -33,7 +33,7 @@ class ModuleController extends BaseController
             if ($result) return $this->sendJson(201, array('status' => 'success', 'message' => 'Module has been created!'));
         }
         else {
-            return $this->sendJson(400, array("status" => "failed", "message" => "No mapping found!"));
+            return $this->sendJson(405, array("status" => "failed", "message" => "No mapping found!"));
         }
     }
 
@@ -50,8 +50,6 @@ class ModuleController extends BaseController
             $result = $this->moduleService->deleteById($id);
             if (!$result) return $this->sendJson(400, array('status' => 'failed', 'message' => 'Failed to delete module!'));
             else return $this->sendJson(200, array('status' => 'success', 'message' => 'Module has been deleted!'));
-
-
         }
     }
 

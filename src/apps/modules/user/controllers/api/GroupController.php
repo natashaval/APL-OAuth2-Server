@@ -6,7 +6,7 @@
  * Time: 11:38
  */
 
-namespace App\User\Controllers\Web;
+namespace App\User\Controllers\Api;
 
 
 use App\User\Presenters\GroupPresenter;

@@ -6,7 +6,7 @@
  * Time: 23:30
  */
 
-namespace App\Exam\Controllers\Web;
+namespace App\Exam\Controllers\Api;
 
 
 use App\Exam\Presenters\SubjectPresenter;
