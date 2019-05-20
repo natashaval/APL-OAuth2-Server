@@ -44,3 +44,9 @@ Api link: http://localhost/apl/APL-OAuth2-Server/src/:moduleName/api/:controller
 - deleteById
 
 ## Tests
+- getAll
+- getById
+- list (only name, description, begin&end time)
+- createTest
+- assignTestToGroups
+- assignTestToSubjects
