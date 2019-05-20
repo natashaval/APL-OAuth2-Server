@@ -52,11 +52,6 @@ class SubjectRepository extends BaseRepository implements SubjectRepositoryInter
         return $newSubject;
     }
 
-    public function deleteById($id)
-    {
-        // TODO: Implement deleteById() method.
-    }
-
     public function updateSubject($id, SubjectEntity $subject)
     {
         // TODO: Implement updateSubject() method.

@@ -51,8 +51,6 @@ class ModuleRepository extends BaseRepository implements ModuleRepositoryInterfa
     {
         // TODO: Implement deleteById() method.
         $conn = $this->getConnection();
-
-
         $count = $conn->fetchOne("SELECT COUNT(id) AS total FROM subjects WHERE module_id = :module_id",
             Db::FETCH_ASSOC,
             [ "module_id" => $id ],
