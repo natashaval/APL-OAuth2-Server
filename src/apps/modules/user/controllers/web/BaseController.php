@@ -16,9 +16,10 @@ use Phalcon\Mvc\Controller;
 
 abstract class BaseController extends Controller
 {
-    public function sendJson($data) {
+    public function sendJson($code, $data) {
         $this->view->disable();
         $response = new Response();
+        $response->setStatusCode($code);
         $response->setContentType('application/json', 'UTF-8');
         $response->setJsonContent($data);
         return $response;

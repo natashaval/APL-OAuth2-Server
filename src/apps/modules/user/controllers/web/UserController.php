@@ -49,14 +49,17 @@ class UserController extends BaseController
             $newUser = UserPresenter::convertCreateUser($data, $factoryUser);
 
             $result = $this->userService->createUser($newUser);
-            if ($result) return $this->sendJson(array('status' => 'success', 'message' => 'User has been created!'));
-            else return $this->sendJson(array('status' => 'failed', 'message' => 'Failed to create user!'));
+            if ($result) return $this->sendJson(201, array('status' => 'success', 'message' => 'User has been created!'));
+            else return $this->sendJson(400, array('status' => 'failed', 'message' => 'Failed to create user!'));
 
         }
 
         else if ($this->request->isGet()) {
             $data = $this->userService->getAll();
-            return $this->sendJson($data);
+            return $this->sendJson(200, $data);
+        }
+        else {
+            return $this->sendJson(400, array("status" => "failed", "message" => "No mapping found!"));
         }
     }
 
@@ -65,19 +68,16 @@ class UserController extends BaseController
         if ($this->request->isGet()) {
             $user = $this->userService->getById($id);
             if (!$user) {
-                $this->response->setStatusCode(404);
-                $this->response->setJsonContent(
-                    array('status' => 'Not Found', 'message' => 'User is not found!'));
-                return $this->response;
+                return $this->sendJson(404, array('status' => 'Not Found', 'message' => 'User is not found!'));
             } else {
 //                return $this->sendJson($user);
                 $userResponse = UserPresenter::convertGetResponse($user, new UserResponse());
-                return $this->sendJson($userResponse);
+                return $this->sendJson(200, $userResponse);
             }
         } elseif ($this->request->isDelete()) {
             $result = $this->userService->deleteById($id);
-            if ($result) return $this->sendJson(array('status' => 'success', 'message' => 'User has been deleted!'));
-            else return $this->sendJson(array('status' => 'failed', 'message' => 'Failed to delete user!'));
+            if ($result) return $this->sendJson(200, array('status' => 'success', 'message' => 'User has been deleted!'));
+            else return $this->sendJson(400, array('status' => 'failed', 'message' => 'Failed to delete user!'));
 
         }
     }

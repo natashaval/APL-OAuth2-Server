@@ -57,6 +57,11 @@ $di->setShared('database', function() use ($config) {
     return $connection;
 });
 
+$di['groupService'] = function () use ($di) {
+    $repository = new \App\User\Repositories\GroupRepository($di);
+    return new \Domain\User\Services\GroupService($repository);
+};
+
 $di['userService'] = function () use ($di) {
     $repository = new UserRepository($di);
     return new UserService($repository);

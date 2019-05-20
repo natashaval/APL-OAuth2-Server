@@ -34,7 +34,6 @@ class ModuleController extends BaseController
         }
         else {
             return $this->sendJson(400, array("status" => "failed", "message" => "No mapping found!"));
-
         }
     }
 
