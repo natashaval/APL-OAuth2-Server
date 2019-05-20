@@ -9,6 +9,7 @@
 namespace App\Exam\Controllers\Api;
 
 
+use App\Exam\Models\TestRequest;
 use App\Exam\Models\TestResponse;
 use App\Exam\Presenters\TestPresenter;
 use Domain\Exam\Entities\TestEntity;
@@ -65,5 +66,26 @@ class TestController extends BaseController
         }
 //        var_dump($testsResponse);
         return $this->sendJson(200, $testsResponse);
+    }
+
+    public function assignAction(){
+        if ($this->request->isPost()) {
+            $this->view->disable();
+            $data = json_decode($this->request->getRawBody(), true);
+            $request = TestPresenter::convertAssign($data, new TestRequest());
+            $message = [];
+            if(count($request->subjects) > 0) {
+                $this->testService->assignTestToSubjects($request->test_id, $request->subjects);
+                array_push($message, "Subjects has been assigned to test");
+            }
+            if(count($request->groups) > 0) {
+                $this->testService->assignTestToGroups($request->test_id, $request->groups);
+                array_push($message, "Groups has been assigned to test");
+            }
+            return $this->sendJson(200, $message);
+        }
+        else {
+            return $this->sendJson(405, array("status" => "failed", "message" => "No mapping found!"));
+        }
     }
 }

@@ -9,6 +9,7 @@
 namespace App\Exam\Presenters;
 
 
+use App\Exam\Models\TestRequest;
 use App\Exam\Models\TestResponse;
 use Domain\Exam\Entities\TestEntity;
 
@@ -40,5 +41,12 @@ class TestPresenter
         $response->begin_time = $data["begin_time"];
         $response->end_time = $data["end_time"];
         return $response;
+    }
+
+    public static function convertAssign($data, TestRequest $request){
+        $request->test_id = $data["test_id"];
+        $request->groups = $data["groups"];
+        $request->subjects = $data["subjects"];
+        return $request;
     }
 }
