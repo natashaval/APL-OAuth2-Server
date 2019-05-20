@@ -15,7 +15,7 @@ class QuestionPresenter
 {
     public static function convertCreate($data, QuestionEntity $entity){
         $entity->setDescription($data["description"]);
-        if(isset($data["explanation"])) $entity->setDescription($data["explanation"]);
+        if(isset($data["explanation"])) $entity->setExplanation($data["explanation"]);
         $entity->setType($data["type"]);
         $entity->setDifficulty($data["difficulty"]);
         $entity->setPosition($data["position"]);

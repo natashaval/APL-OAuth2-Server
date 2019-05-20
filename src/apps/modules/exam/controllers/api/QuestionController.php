@@ -44,5 +44,14 @@ class QuestionController extends BaseController
             if ($question) return $this->sendObject(200, json_encode($question));
             else return $this->sendJson(404, array("status" => "failed", "message" => "Subject not found!"));
         }
+
+        elseif ($this->request->isDelete()){
+            $result = $this->questionService->deleteById($id);
+            if (!$result) return $this->sendJson(400, array('status' => 'failed', 'message' => 'Failed to delete question! Question still contains answers'));
+            else return $this->sendJson(200, array('status' => 'success', 'message' => 'Question has been deleted!'));
+        }
+        else {
+            return $this->sendJson(405, array("status" => "failed", "message" => "No mapping found!"));
+        }
     }
 }

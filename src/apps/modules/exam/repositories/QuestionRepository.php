@@ -55,4 +55,31 @@ class QuestionRepository extends BaseRepository implements QuestionRepositoryInt
         );
         return $newQuestion;
     }
+
+    public function deleteById($id)
+    {
+        // TODO: Implement deleteById() method.
+        $conn = $this->getConnection();
+        $count = $conn->fetchOne("SELECT COUNT(id) AS total FROM answers WHERE question_id = :question_id",
+            Db::FETCH_ASSOC,
+            [ "question_id" => $id ],
+            [ "question_id" => Column::BIND_PARAM_INT]
+        );
+
+        if ($count["total"] > 0) return false; // check if there is foreign key in other table
+
+        else {
+            $stmt = $conn->prepare("UPDATE `question` SET enabled = FALSE WHERE id = :id");
+            $result = $conn->executePrepared(
+                $stmt,
+                ["id" => $id],
+                ["id" => Column::BIND_PARAM_INT]
+            );
+
+            if($result) return true;
+            else return false;
+        }
+
+        return false;
+    }
 }
