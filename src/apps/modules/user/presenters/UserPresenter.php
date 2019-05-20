@@ -37,6 +37,7 @@ class UserPresenter
         if (isset($data["regNumber"])) $user->setRegNumber($data["regNumber"]);
         if (isset($data["regDate"])) $user->setRegDate($data["regDate"]);
         if (isset($data["otpKey"])) $user->setOtpKey($data["otpKey"]);
+        if (isset($data["groups"])) $user->setGroups($data["groups"]); // array of group_id
         return $user;
     }
 

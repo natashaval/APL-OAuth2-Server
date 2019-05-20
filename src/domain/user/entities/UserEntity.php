@@ -18,6 +18,7 @@ class UserEntity
     private $regNumber;
     private $level;
     private $otpKey;
+    private $groups; // array of Object GroupEntity
 
     /**
      * @return int
@@ -179,6 +180,22 @@ class UserEntity
     public function setOtpKey($otpKey)
     {
         $this->otpKey = $otpKey;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getGroups()
+    {
+        return $this->groups;
+    }
+
+    /**
+     * @param mixed $groups
+     */
+    public function setGroups($groups)
+    {
+        $this->groups = $groups;
     }
 
 

@@ -3,10 +3,9 @@
   <component name="ChangeListManager">
     <list default="true" id="101f6ed9-a71d-48c3-83fb-37cdba38682a" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/apps/config/services.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/apps/config/services.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/apps/modules/exam/controllers/web/ModuleController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/apps/modules/exam/controllers/web/ModuleController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/apps/modules/user/controllers/web/BaseController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/apps/modules/user/controllers/web/BaseController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/apps/modules/user/controllers/web/UserController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/apps/modules/user/controllers/web/UserController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/apps/modules/user/presenters/UserPresenter.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/apps/modules/user/presenters/UserPresenter.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/apps/modules/user/repositories/UserRepository.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/apps/modules/user/repositories/UserRepository.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/domain/user/entities/UserEntity.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/domain/user/entities/UserEntity.php" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -73,7 +72,7 @@
           <entry key="Database Element" value="8" />
           <entry key="HTML" value="4" />
           <entry key="JSON" value="3" />
-          <entry key="PHP" value="232" />
+          <entry key="PHP" value="234" />
           <entry key="PLAIN_TEXT" value="1" />
           <entry key="Scratch" value="2" />
         </counts>
@@ -82,7 +81,7 @@
         <counts>
           <entry key="HTML" value="84" />
           <entry key="JSON" value="13" />
-          <entry key="PHP" value="17846" />
+          <entry key="PHP" value="18255" />
           <entry key="PLAIN_TEXT" value="14" />
           <entry key="SQL" value="18" />
           <entry key="Scratch" value="67" />
@@ -98,11 +97,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/apps/modules/user/repositories/GroupRepository.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="128">
-              <caret line="13" column="22" selection-start-line="13" selection-start-column="22" selection-end-line="13" selection-end-column="22" />
+            <state relative-caret-position="176">
+              <caret line="20" column="20" lean-forward="true" selection-start-line="20" selection-start-column="20" selection-end-line="20" selection-end-column="20" />
               <folding>
                 <element signature="e#130#167#0#PHP" expanded="true" />
               </folding>
@@ -110,35 +109,23 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/apps/modules/user/repositories/UserRepository.php">
           <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="163">
+              <caret line="60" column="52" selection-start-line="60" selection-start-column="52" selection-end-line="60" selection-end-column="52" />
+              <folding>
+                <element signature="e#129#165#0#PHP" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/domain/user/entities/UserEntity.php">
+          <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="128">
-              <caret line="13" selection-start-line="13" selection-end-line="13" selection-end-column="22" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/apps/modules/user/controllers/web/GroupController.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="176">
-              <caret line="57" column="14" lean-forward="true" selection-start-line="57" selection-start-column="14" selection-end-line="57" selection-end-column="14" />
-              <folding>
-                <element signature="e#133#172#0#PHP" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/apps/modules/exam/controllers/web/ModuleController.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="138">
-              <caret line="36" column="9" lean-forward="true" selection-start-line="34" selection-start-column="8" selection-end-line="36" selection-end-column="9" />
-              <folding>
-                <element signature="e#132#172#0#PHP" expanded="true" />
-              </folding>
+              <caret line="13" column="18" lean-forward="true" selection-start-line="13" selection-start-column="18" selection-end-line="13" selection-end-column="18" />
             </state>
           </provider>
         </entry>
@@ -146,11 +133,20 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/apps/modules/user/controllers/web/UserController.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="236">
-              <caret line="75" column="13" lean-forward="true" selection-start-line="68" selection-start-column="12" selection-end-line="75" selection-end-column="13" />
+            <state relative-caret-position="124">
+              <caret line="48" column="51" selection-start-line="48" selection-start-column="51" selection-end-line="48" selection-end-column="51" />
               <folding>
                 <element signature="e#133#168#0#PHP" expanded="true" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/domain/user/services/UserService.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="195">
+              <caret line="40" column="47" lean-forward="true" selection-start-line="40" selection-start-column="47" selection-end-line="40" selection-end-column="47" />
             </state>
           </provider>
         </entry>
@@ -179,31 +175,10 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/apps/modules/user/presenters/UserPresenter.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-55">
-              <caret line="32" column="27" selection-start-line="32" selection-start-column="27" selection-end-line="32" selection-end-column="27" />
+            <state relative-caret-position="219">
+              <caret line="39" column="91" selection-start-line="39" selection-start-column="91" selection-end-line="39" selection-end-column="91" />
               <folding>
                 <element signature="e#127#152#0#PHP" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/apps/modules/user/presenters/GroupPresenter.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="160">
-              <caret line="15" column="18" selection-start-line="15" selection-start-column="18" selection-end-line="15" selection-end-column="18" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/apps/modules/user/controllers/web/BaseController.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="192">
-              <caret line="21" column="40" selection-start-line="21" selection-start-column="40" selection-end-line="21" selection-end-column="40" />
-              <folding>
-                <element signature="e#132#158#0#PHP" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -231,11 +206,9 @@
         <option value="$PROJECT_DIR$/src/apps/modules/user/config/services.php" />
         <option value="$PROJECT_DIR$/src/apps/modules/user/controllers/web/DashboardController.php" />
         <option value="$PROJECT_DIR$/src/apps/modules/user/models/User.php" />
-        <option value="$PROJECT_DIR$/src/domain/user/entities/UserEntity.php" />
         <option value="$PROJECT_DIR$/src/apps/modules/user/models/UserResponse.php" />
         <option value="$PROJECT_DIR$/src/apps/modules/user/factories/UserFactory.php" />
         <option value="$PROJECT_DIR$/src/domain/user/repositories/UserRepositoryInterface.php" />
-        <option value="$PROJECT_DIR$/src/apps/modules/user/repositories/UserRepository.php" />
         <option value="$PROJECT_DIR$/src/apps/modules/exam/Module.php" />
         <option value="$PROJECT_DIR$/src/domain/exam/entities/SubjectEntity.php" />
         <option value="$PROJECT_DIR$/src/domain/exam/repositories/SubjectRepositoryInterface.php" />
@@ -252,7 +225,6 @@
         <option value="$PROJECT_DIR$/src/apps/modules/exam/controllers/api/BaseController.php" />
         <option value="$PROJECT_DIR$/src/apps/modules/exam/controllers/api/ModuleController.php" />
         <option value="$PROJECT_DIR$/src/apps/modules/exam/factories/ModuleFactory.php" />
-        <option value="$PROJECT_DIR$/src/apps/modules/user/presenters/UserPresenter.php" />
         <option value="$PROJECT_DIR$/src/apps/config/loader.php" />
         <option value="$PROJECT_DIR$/src/domain/exam/entities/ModuleEntity.php" />
         <option value="$PROJECT_DIR$/src/apps/modules/exam/models/Subject.php" />
@@ -278,6 +250,9 @@
         <option value="$PROJECT_DIR$/src/apps/modules/user/controllers/web/UserController.php" />
         <option value="$PROJECT_DIR$/src/apps/modules/user/controllers/web/GroupController.php" />
         <option value="$PROJECT_DIR$/src/apps/modules/user/repositories/GroupRepository.php" />
+        <option value="$PROJECT_DIR$/src/domain/user/entities/UserEntity.php" />
+        <option value="$PROJECT_DIR$/src/apps/modules/user/presenters/UserPresenter.php" />
+        <option value="$PROJECT_DIR$/src/apps/modules/user/repositories/UserRepository.php" />
       </list>
     </option>
   </component>
@@ -296,8 +271,8 @@
     </include_path>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="189" />
-    <option name="y" value="157" />
+    <option name="x" value="246" />
+    <option name="y" value="97" />
     <option name="width" value="1641" />
     <option name="height" value="1032" />
   </component>
@@ -499,7 +474,7 @@
     <property name="DatabaseDriversLRU" value="mysql" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1558327878040" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1558331013793" />
     <property name="database.console.LAST_STATE" value="false" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
@@ -541,15 +516,15 @@
       <workItem from="1558016713462" duration="535000" />
       <workItem from="1558159455692" duration="10202000" />
       <workItem from="1558269298070" duration="22186000" />
-      <workItem from="1558321921643" duration="4393000" />
+      <workItem from="1558321921643" duration="6749000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="55302000" />
+    <option name="totallyTimeSpent" value="57658000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="126" y="105" width="1094" height="688" extended-state="0" />
+    <frame x="164" y="65" width="1094" height="688" extended-state="0" />
     <editor active="true" />
     <layout>
       <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.30947775" />
@@ -619,13 +594,6 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/domain/user/entities/UserEntity.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="208">
-          <caret line="18" column="19" selection-start-line="18" selection-start-column="19" selection-end-line="18" selection-end-column="19" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/domain/user/services/UserServiceInterface.php" />
     <entry file="file://$PROJECT_DIR$/src/apps/modules/exam/config/config.php">
       <provider selected="true" editor-type-id="text-editor">
@@ -878,13 +846,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/domain/user/services/UserService.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="227">
-          <caret line="54" column="5" lean-forward="true" selection-start-line="24" selection-start-column="4" selection-end-line="54" selection-end-column="5" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/domain/exam/services/SubjectService.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="250">
@@ -925,16 +886,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/apps/modules/user/presenters/UserPresenter.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-55">
-          <caret line="32" column="27" selection-start-line="32" selection-start-column="27" selection-end-line="32" selection-end-column="27" />
-          <folding>
-            <element signature="e#127#152#0#PHP" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/apps/modules/user/presenters/GroupPresenter.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="160">
@@ -946,16 +897,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="288">
           <caret line="18" column="2" lean-forward="true" selection-start-line="18" selection-start-column="2" selection-end-line="18" selection-end-column="2" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/apps/modules/user/controllers/web/UserController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="236">
-          <caret line="75" column="13" lean-forward="true" selection-start-line="68" selection-start-column="12" selection-end-line="75" selection-end-column="13" />
-          <folding>
-            <element signature="e#133#168#0#PHP" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -989,19 +930,56 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/apps/modules/user/repositories/UserRepository.php">
+    <entry file="file://$PROJECT_DIR$/src/domain/user/entities/UserEntity.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="128">
-          <caret line="13" selection-start-line="13" selection-end-line="13" selection-end-column="22" />
+          <caret line="13" column="18" lean-forward="true" selection-start-line="13" selection-start-column="18" selection-end-line="13" selection-end-column="18" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/apps/modules/user/controllers/web/UserController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="124">
+          <caret line="48" column="51" selection-start-line="48" selection-start-column="51" selection-end-line="48" selection-end-column="51" />
+          <folding>
+            <element signature="e#133#168#0#PHP" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/apps/modules/user/presenters/UserPresenter.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="219">
+          <caret line="39" column="91" selection-start-line="39" selection-start-column="91" selection-end-line="39" selection-end-column="91" />
+          <folding>
+            <element signature="e#127#152#0#PHP" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/domain/user/services/UserService.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="195">
+          <caret line="40" column="47" lean-forward="true" selection-start-line="40" selection-start-column="47" selection-end-line="40" selection-end-column="47" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/apps/modules/user/repositories/GroupRepository.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="128">
-          <caret line="13" column="22" selection-start-line="13" selection-start-column="22" selection-end-line="13" selection-end-column="22" />
+        <state relative-caret-position="176">
+          <caret line="20" column="20" lean-forward="true" selection-start-line="20" selection-start-column="20" selection-end-line="20" selection-end-column="20" />
           <folding>
             <element signature="e#130#167#0#PHP" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/apps/modules/user/repositories/UserRepository.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="163">
+          <caret line="60" column="52" selection-start-line="60" selection-start-column="52" selection-end-line="60" selection-end-column="52" />
+          <folding>
+            <element signature="e#129#165#0#PHP" expanded="true" />
           </folding>
         </state>
       </provider>
