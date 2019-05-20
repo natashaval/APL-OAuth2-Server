@@ -57,13 +57,15 @@ class UserRepository extends BaseRepository implements UserRepositoryInterface
 
         $userId = $conn->lastInsertId();
         $groups = $user->getGroups();
-        foreach ($groups as $group){
-            // group_id insert into N-N users_groups
-            $groupId = $conn->insert(
-                "users_groups",
-                [$userId, $group],
-                ["user_id", "group_id"]
-            );
+        if (count($groups) > 0) {
+            foreach ($groups as $group) {
+                // group_id insert into N-N users_groups
+                $groupId = $conn->insert(
+                    "users_groups",
+                    [$userId, $group],
+                    ["user_id", "group_id"]
+                );
+            }
         }
 
         return $newUser;

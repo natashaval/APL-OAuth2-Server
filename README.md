@@ -37,3 +37,10 @@ Api link: http://localhost/apl/APL-OAuth2-Server/src/:moduleName/api/:controller
 - createQuestion
 
 ## Answers
+- getAll (array of Answer objects + question object)
+- getById (Answer object + question object)
+- createAnswer
+- updateAnswer
+- deleteById
+
+## Tests

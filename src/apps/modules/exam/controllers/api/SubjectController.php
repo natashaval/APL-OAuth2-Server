@@ -35,7 +35,7 @@ class SubjectController extends BaseController
             if ($result) return $this->sendJson(201, array('status' => 'success', 'message' => 'Subject has been created!'));
         }
         else {
-            return $this->sendJson(400, array("status" => "failed", "message" => "No mapping found!"));
+            return $this->sendJson(405, array("status" => "failed", "message" => "No mapping found!"));
         }
     }
 
@@ -54,7 +54,7 @@ class SubjectController extends BaseController
             else return $this->sendJson(400, array('status' => 'failed', 'message' => 'Failed to update subject!'));
         }
         else {
-            return $this->sendJson(400, array("status" => "failed", "message" => "No mapping found!"));
+            return $this->sendJson(405, array("status" => "failed", "message" => "No mapping found!"));
         }
     }
 }

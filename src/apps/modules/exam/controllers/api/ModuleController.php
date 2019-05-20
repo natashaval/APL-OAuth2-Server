@@ -51,6 +51,9 @@ class ModuleController extends BaseController
             if (!$result) return $this->sendJson(400, array('status' => 'failed', 'message' => 'Failed to delete module!'));
             else return $this->sendJson(200, array('status' => 'success', 'message' => 'Module has been deleted!'));
         }
+        else {
+            return $this->sendJson(405, array("status" => "failed", "message" => "No mapping found!"));
+        }
     }
 
 }

@@ -20,6 +20,8 @@ use App\Exam\Repositories\QuestionRepository;
 use Domain\Exam\Services\QuestionService;
 use App\Exam\Repositories\AnswerRepository;
 use Domain\Exam\Services\AnswerService;
+use App\Exam\Repositories\TestRepository;
+use Domain\Exam\Services\TestService;
 
 $di['config'] = function() use ($config) {
 	return $config;
@@ -92,6 +94,11 @@ $di['answerService'] = function () use ($di) {
     $answerRepository = new AnswerRepository($di);
     $questionRepository = new QuestionRepository($di);
     return new AnswerService($answerRepository, $questionRepository);
+};
+
+$di['testService'] = function () use ($di) {
+    $repository = new TestRepository($di);
+    return new TestService($repository);
 };
 
 $di['voltService'] = function($view, $di) use ($config) { // menggunakan template volt seperti di Laravel -> blade
