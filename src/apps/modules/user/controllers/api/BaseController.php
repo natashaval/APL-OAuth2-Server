@@ -19,6 +19,7 @@ abstract class BaseController extends Controller
     public function sendJson($code, $data) {
         $this->view->disable();
         $response = new Response();
+        $response->setHeader("Access-Control-Allow-Origin", "*");
         $response->setStatusCode($code);
         $response->setContentType('application/json', 'UTF-8');
         $response->setJsonContent($data);

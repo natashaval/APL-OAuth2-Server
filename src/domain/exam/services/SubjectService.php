@@ -73,4 +73,9 @@ class SubjectService
         }
     }
 
+    public function getAllSubjectByModuleId($id){
+        $subjects = $this->subjectRepository->getAllSubjectByModuleId($id);
+        return $subjects;
+    }
+
 }

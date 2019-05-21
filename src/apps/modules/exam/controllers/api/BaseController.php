@@ -13,9 +13,11 @@ use \Phalcon\Mvc\Controller;
 
 class BaseController extends Controller
 {
+//https://forum.phalconphp.com/discussion/12725/cross-domain-access
     public function sendJson($code, $data) {
         $this->view->disable();
         $response = new Response();
+        $response->setHeader("Access-Control-Allow-Origin", "*");
         $response->setStatusCode($code);
         $response->setContentType('application/json', 'UTF-8');
         $response->setJsonContent($data);
@@ -25,6 +27,7 @@ class BaseController extends Controller
     public function sendObject($code, $data) {
         $this->view->disable();
         $response = new Response();
+        $response->setHeader("Access-Control-Allow-Origin", "*");
         $response->setStatusCode($code);
         $response->setContentType('application/json', 'UTF-8');
         $response->setContent($data);

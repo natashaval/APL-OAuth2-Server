@@ -71,4 +71,27 @@ class SubjectRepository extends BaseRepository implements SubjectRepositoryInter
         );
         return $updateSubject;
     }
+
+    public function getAllSubjectByModuleId($id)
+    {
+        // TODO: Implement getAllSubjectByModuleId() method.
+        $conn = $this->getConnection();
+//        $stmt = $conn->prepare("SELECT * FROM subjects WHERE module_id = :id");
+//        $subjects = $conn->executePrepared($stmt,
+//            [ "id" => $id],
+//            [ "id" => Column::BIND_PARAM_INT]
+//        );
+//        $subjects = $conn->query(
+//            "SELECT * FROM subjects WHERE module_id = ?",
+//            [$id]
+//        )->execute();
+        $subjects = $conn->fetchAll(
+            "SELECT * FROM subjects WHERE module_id = :module_id",
+            \Phalcon\Db::FETCH_ASSOC,
+            [
+                "module_id" => $id
+            ]
+        );
+        return $subjects;
+    }
 }

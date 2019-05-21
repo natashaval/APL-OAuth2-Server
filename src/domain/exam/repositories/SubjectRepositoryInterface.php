@@ -16,4 +16,6 @@ interface SubjectRepositoryInterface
     public function getById($id);
     public function createSubject(SubjectEntity $subject);
     public function updateSubject($id, SubjectEntity $subject);
+
+    public function getAllSubjectByModuleId($id);
 }

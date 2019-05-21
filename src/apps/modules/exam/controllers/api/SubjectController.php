@@ -57,4 +57,16 @@ class SubjectController extends BaseController
             return $this->sendJson(405, array("status" => "failed", "message" => "No mapping found!"));
         }
     }
+
+    public function moduleAction($id){
+        if ($this->request->isGet()) {
+            $subject = $this->subjectService->getAllSubjectByModuleId($id);
+//            var_dump($subject);
+            if ($subject) return $this->sendObject(200, json_encode($subject));
+            else return $this->sendJson(404, array("status" => "failed", "message" => "Subject not found!"));
+        }
+        else {
+            return $this->sendJson(405, array("status" => "failed", "message" => "No mapping found!"));
+        }
+    }
 }
