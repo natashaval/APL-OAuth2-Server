@@ -2,17 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="101f6ed9-a71d-48c3-83fb-37cdba38682a" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/APL-OAuth2-Server.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/APL-OAuth2-Server.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/php.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/php.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/apps/config/services.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/apps/config/services.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/apps/modules/user/Module.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/apps/modules/user/Module.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/apps/modules/user/controllers/api/UserController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/apps/modules/user/controllers/api/UserController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/apps/modules/user/repositories/UserRepository.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/apps/modules/user/repositories/UserRepository.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/composer.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/composer.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/composer.lock" beforeDir="false" afterPath="$PROJECT_DIR$/src/composer.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/domain/user/repositories/UserRepositoryInterface.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/domain/user/repositories/UserRepositoryInterface.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/domain/user/services/UserService.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/domain/user/services/UserService.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -76,9 +68,9 @@
           <entry key="HTML" value="8" />
           <entry key="Image" value="1" />
           <entry key="JSON" value="4" />
-          <entry key="Markdown" value="6" />
+          <entry key="Markdown" value="7" />
           <entry key="PHP" value="365" />
-          <entry key="PLAIN_TEXT" value="2" />
+          <entry key="PLAIN_TEXT" value="3" />
           <entry key="Scratch" value="3" />
         </counts>
       </usages-collector>
@@ -86,9 +78,9 @@
         <counts>
           <entry key="HTML" value="113" />
           <entry key="JSON" value="13" />
-          <entry key="Markdown" value="1232" />
+          <entry key="Markdown" value="1254" />
           <entry key="PHP" value="27279" />
-          <entry key="PLAIN_TEXT" value="110" />
+          <entry key="PLAIN_TEXT" value="159" />
           <entry key="SQL" value="135" />
           <entry key="Scratch" value="125" />
         </counts>
@@ -103,6 +95,18 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/README.md">
+          <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+            <state split_layout="SPLIT">
+              <first_editor relative-caret-position="241">
+                <caret line="20" column="22" lean-forward="true" selection-start-line="20" selection-start-column="22" selection-end-line="20" selection-end-column="22" />
+              </first_editor>
+              <second_editor />
+            </state>
+          </provider>
+        </entry>
+      </file>
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/domain/user/libraries/QrGeneratorInterface.php">
           <provider selected="true" editor-type-id="text-editor">
@@ -122,6 +126,15 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/.gitignore">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="144">
+              <caret line="9" column="9" lean-forward="true" selection-start-line="9" selection-start-column="9" selection-end-line="9" selection-end-column="9" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/domain/user/services/UserService.php">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="448">
@@ -133,7 +146,7 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/apps/modules/user/controllers/api/UserController.php">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="281">
@@ -193,7 +206,6 @@
         <option value="$PROJECT_DIR$/src/domain/exam/services/TestService.php" />
         <option value="$PROJECT_DIR$/src/apps/modules/exam/repositories/TestRepository.php" />
         <option value="$PROJECT_DIR$/src/apps/modules/exam/models/TestResponse.php" />
-        <option value="$PROJECT_DIR$/README.md" />
         <option value="$PROJECT_DIR$/src/apps/modules/exam/models/TestRequest.php" />
         <option value="$PROJECT_DIR$/src/apps/modules/exam/presenters/TestPresenter.php" />
         <option value="$PROJECT_DIR$/src/apps/modules/exam/controllers/api/TestController.php" />
@@ -210,7 +222,6 @@
         <option value="$PROJECT_DIR$/src/apps/modules/exam/repositories/SubjectRepository.php" />
         <option value="$PROJECT_DIR$/src/apps/modules/exam/controllers/api/SubjectController.php" />
         <option value="$PROJECT_DIR$/src/apps/modules/exam/controllers/api/ModuleController.php" />
-        <option value="$PROJECT_DIR$/.gitignore" />
         <option value="$PROJECT_DIR$/src/apps/modules/user/libraries/QrGeneratorInterface.php" />
         <option value="$PROJECT_DIR$/src/apps/modules/user/Module.php" />
         <option value="$PROJECT_DIR$/src/composer.json" />
@@ -221,6 +232,8 @@
         <option value="$PROJECT_DIR$/src/domain/user/libraries/QrGeneratorInterface.php" />
         <option value="$PROJECT_DIR$/src/apps/modules/user/libraries/QrGeneratorImpl.php" />
         <option value="$PROJECT_DIR$/src/apps/modules/user/controllers/api/UserController.php" />
+        <option value="$PROJECT_DIR$/.gitignore" />
+        <option value="$PROJECT_DIR$/README.md" />
       </list>
     </option>
   </component>
@@ -237,8 +250,8 @@
     </include_path>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="310" />
-    <option name="y" value="37" />
+    <option name="x" value="288" />
+    <option name="y" value="10" />
     <option name="width" value="1641" />
     <option name="height" value="1032" />
   </component>
@@ -266,74 +279,14 @@
               <item name="APL-OAuth2-Server" type="b2602c69:ProjectViewProjectNode" />
               <item name="APL-OAuth2-Server" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="apps" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="APL-OAuth2-Server" type="b2602c69:ProjectViewProjectNode" />
-              <item name="APL-OAuth2-Server" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="apps" type="462c0819:PsiDirectoryNode" />
-              <item name="modules" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="APL-OAuth2-Server" type="b2602c69:ProjectViewProjectNode" />
-              <item name="APL-OAuth2-Server" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="apps" type="462c0819:PsiDirectoryNode" />
-              <item name="modules" type="462c0819:PsiDirectoryNode" />
-              <item name="user" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="APL-OAuth2-Server" type="b2602c69:ProjectViewProjectNode" />
-              <item name="APL-OAuth2-Server" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="apps" type="462c0819:PsiDirectoryNode" />
-              <item name="modules" type="462c0819:PsiDirectoryNode" />
-              <item name="user" type="462c0819:PsiDirectoryNode" />
-              <item name="repositories" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="APL-OAuth2-Server" type="b2602c69:ProjectViewProjectNode" />
-              <item name="APL-OAuth2-Server" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="domain" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="APL-OAuth2-Server" type="b2602c69:ProjectViewProjectNode" />
-              <item name="APL-OAuth2-Server" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="domain" type="462c0819:PsiDirectoryNode" />
-              <item name="user" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="APL-OAuth2-Server" type="b2602c69:ProjectViewProjectNode" />
-              <item name="APL-OAuth2-Server" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="domain" type="462c0819:PsiDirectoryNode" />
-              <item name="user" type="462c0819:PsiDirectoryNode" />
-              <item name="libraries" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="APL-OAuth2-Server" type="b2602c69:ProjectViewProjectNode" />
-              <item name="APL-OAuth2-Server" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="domain" type="462c0819:PsiDirectoryNode" />
-              <item name="user" type="462c0819:PsiDirectoryNode" />
-              <item name="repositories" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="APL-OAuth2-Server" type="b2602c69:ProjectViewProjectNode" />
-              <item name="APL-OAuth2-Server" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="domain" type="462c0819:PsiDirectoryNode" />
-              <item name="user" type="462c0819:PsiDirectoryNode" />
-              <item name="services" type="462c0819:PsiDirectoryNode" />
+              <item name="public" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="APL-OAuth2-Server" type="b2602c69:ProjectViewProjectNode" />
               <item name="APL-OAuth2-Server" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="public" type="462c0819:PsiDirectoryNode" />
+              <item name="images" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -348,7 +301,7 @@
     <property name="DefaultHtmlFileTemplate" value="HTML File" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1558549859587" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1558550025688" />
     <property name="database.console.LAST_STATE" value="false" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/src/domain/user/libraries" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
@@ -399,15 +352,15 @@
       <workItem from="1558409833475" duration="949000" />
       <workItem from="1558413621695" duration="500000" />
       <workItem from="1558419157771" duration="3572000" />
-      <workItem from="1558521730070" duration="2921000" />
+      <workItem from="1558521730070" duration="3051000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="82070000" />
+    <option name="totallyTimeSpent" value="82200000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="207" y="25" width="1094" height="688" extended-state="0" />
+    <frame x="192" y="7" width="1094" height="688" extended-state="0" />
     <editor active="true" />
     <layout>
       <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.3433269" />
@@ -427,7 +380,7 @@
       <window_info anchor="bottom" id="Database Console" order="7" weight="0.32733813" />
       <window_info anchor="bottom" id="Version Control" order="8" />
       <window_info anchor="bottom" id="Database Changes" order="9" />
-      <window_info anchor="bottom" id="Terminal" order="10" weight="0.32733813" />
+      <window_info anchor="bottom" id="Terminal" order="10" visible="true" weight="0.32733813" />
       <window_info anchor="bottom" id="Event Log" order="11" side_tool="true" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
@@ -631,16 +584,6 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/apps/modules/exam/controllers/web/ModuleController.php" />
-    <entry file="file://$PROJECT_DIR$/README.md">
-      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
-        <state split_layout="SPLIT">
-          <first_editor relative-caret-position="496">
-            <caret line="31" column="15" selection-start-line="31" selection-start-column="15" selection-end-line="31" selection-end-column="15" />
-          </first_editor>
-          <second_editor />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/apps/modules/exam/controllers/api/SubjectController.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="784">
@@ -662,13 +605,6 @@
           <folding>
             <element signature="e#132#158#0#PHP" expanded="true" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/.gitignore">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="204">
-          <caret line="134" column="9" selection-start-line="134" selection-start-column="9" selection-end-line="134" selection-end-column="9" />
         </state>
       </provider>
     </entry>
@@ -777,6 +713,23 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="281">
           <caret line="94" column="18" lean-forward="true" selection-start-line="94" selection-start-column="18" selection-end-line="94" selection-end-column="18" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/.gitignore">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="144">
+          <caret line="9" column="9" lean-forward="true" selection-start-line="9" selection-start-column="9" selection-end-line="9" selection-end-column="9" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/README.md">
+      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+        <state split_layout="SPLIT">
+          <first_editor relative-caret-position="241">
+            <caret line="20" column="22" lean-forward="true" selection-start-line="20" selection-start-column="22" selection-end-line="20" selection-end-column="22" />
+          </first_editor>
+          <second_editor />
         </state>
       </provider>
     </entry>

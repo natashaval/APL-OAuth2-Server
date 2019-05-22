@@ -18,6 +18,7 @@ Api link: http://localhost/apl/APL-OAuth2-Server/src/:moduleName/api/:controller
 - getById (mapping to App UserModel)
 - createUser
 - deleteUser (safe delete)
+- generateQR (library)
 
 ## Modules
 - getAll
