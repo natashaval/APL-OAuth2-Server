@@ -70,7 +70,8 @@ $di['groupService'] = function () use ($di) {
 
 $di['userService'] = function () use ($di) {
     $repository = new UserRepository($di);
-    return new UserService($repository);
+    $generator = new \App\User\Libraries\QrGeneratorImpl($di);
+    return new UserService($repository, $generator);
 };
 
 $di['moduleService'] = function () use ($di) {

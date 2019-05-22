@@ -8,18 +8,21 @@
 
 namespace Domain\User\Services;
 
-use chillerlan\QRCode\QRCode;
+//use chillerlan\QRCode\QRCode;
 use Domain\User\Entities\UserEntity;
+use Domain\User\Libraries\QrGeneratorInterface;
 use Domain\User\Services\UserServiceInterface;
 use Domain\User\Repositories\UserRepositoryInterface;
 
 class UserService
 {
     private $userRepository;
+    private $qrGenerator;
 
-    public function __construct(UserRepositoryInterface $repository)
+    public function __construct(UserRepositoryInterface $repository, QrGeneratorInterface $generator)
     {
         $this->userRepository = $repository;
+        $this->qrGenerator = $generator;
     }
 
     public function getById($id)
@@ -54,10 +57,18 @@ class UserService
         else return false;
     }
 
-    public function generateQR($data)
-    {
-        // TODO: Implement generateQR() method.
-        return (new QRCode())->render($data);
+//    public function generateQR($data)
+//    {
+//        // TODO: Implement generateQR() method.
+//        return (new QRCode())->render($data);
+//    }
+
+    public function generateQr($id, $key){
+        $result = $this->qrGenerator->generateQR($key);
+        if (!is_null($result)){
+            $update = $this->userRepository->updateOtpKey($id, $result);
+        }
+        return $result;
     }
 
 }

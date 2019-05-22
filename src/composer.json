@@ -1,6 +1,5 @@
 {
   "require": {
-    "chillerlan/php-qrcode": "^3.1",
     "tecnickcom/tcpdf": "^6.2"
   }
 }

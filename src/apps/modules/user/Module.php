@@ -18,7 +18,8 @@ class Module implements ModuleDefinitionInterface
             'App\User\Models' => __DIR__ . '/models',
             'App\User\Services' => __DIR__ . '/services',
             'App\User\Presenters' => __DIR__ . '/presenters',
-            'App\User\Factories' => __DIR__ . '/factories'
+            'App\User\Factories' => __DIR__ . '/factories',
+            'App\User\Libraries' => __DIR__ . '/libraries'
 
         ]);
 

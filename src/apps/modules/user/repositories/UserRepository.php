@@ -91,4 +91,21 @@ class UserRepository extends BaseRepository implements UserRepositoryInterface
 
     }
 
+    public function updateOtpKey($id, $key)
+    {
+        // TODO: Implement updateOtpKey() method.
+        $conn = $this->getConnection();
+        $updateKey = $conn->update(
+            "users",
+            ["otpKey"],
+            [$key],
+            [
+                "conditions" => "id = ?",
+                "bind" => [$id]
+            ]
+        );
+
+        return $updateKey;
+    }
+
 }

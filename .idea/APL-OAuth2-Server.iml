@@ -3,8 +3,6 @@
   <component name="NewModuleRootManager" inherit-compiler-output="true">
     <exclude-output />
     <content url="file://$MODULE_DIR$">
-      <excludeFolder url="file://$MODULE_DIR$/src/vendor/chillerlan/php-qrcode" />
-      <excludeFolder url="file://$MODULE_DIR$/src/vendor/chillerlan/php-settings-container" />
       <excludeFolder url="file://$MODULE_DIR$/src/vendor/composer" />
       <excludeFolder url="file://$MODULE_DIR$/src/vendor/tecnickcom/tcpdf" />
     </content>

@@ -84,14 +84,26 @@ class UserController extends BaseController
 
         public function generateAction($id){
             if ($this->request->isGet()){
+                /*
+                 * // chilleran/php-qrcode
                 $user = $this->userService->getById($id);
 //                echo implode($user);
                 $qrCode = $this->userService->generateQR(implode($user));
 //                echo $qrCode;
                 $this->view->setVar("qrCode", $qrCode);
                 $this->view->pick('dashboard/qr');
+                */
+                $this->view->disable();
+                $user = $this->userService->getById($id);
+                $key = $user['otpKey'];
+                $dataPath = $this->userService->generateQr($id, $key);
+
+                if (!is_null($dataPath)) return $this->sendJson(200, array('status' => 'success', 'message' => 'QR code has been generated!'));
+                else return $this->sendJson(400, array('status' => 'failed', 'message' => 'QR code for this user is already exists!'));
             }
         }
+
+
 
 
 }
