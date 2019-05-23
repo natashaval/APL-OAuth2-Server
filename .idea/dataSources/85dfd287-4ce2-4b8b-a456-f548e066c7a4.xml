@@ -1244,6 +1244,7 @@
     <column id="300" parent="252" name="duration_time">
       <Position>6</Position>
       <DataType>smallint(6)|0s</DataType>
+      <NotNull>1</NotNull>
       <ColumnKind>normal</ColumnKind>
     </column>
     <column id="301" parent="252" name="result_to_user">
@@ -1259,6 +1260,7 @@
     <column id="303" parent="252" name="score_right">
       <Position>9</Position>
       <DataType>decimal(10,3 digit)|0s</DataType>
+      <NotNull>1</NotNull>
       <ColumnKind>normal</ColumnKind>
     </column>
     <column id="304" parent="252" name="score_wrong">
@@ -1274,6 +1276,7 @@
     <column id="306" parent="252" name="score_max">
       <Position>12</Position>
       <DataType>decimal(10,3 digit)|0s</DataType>
+      <NotNull>1</NotNull>
       <ColumnKind>normal</ColumnKind>
     </column>
     <column id="307" parent="252" name="score_threshold">
@@ -1330,34 +1333,34 @@
       <RefTableName>groups</RefTableName>
       <RefColNames>id</RefColNames>
     </foreign-key>
-    <column id="317" parent="254" name="tests_id">
+    <column id="317" parent="254" name="test_id">
       <Position>1</Position>
       <DataType>int(11)|0s</DataType>
       <NotNull>1</NotNull>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="318" parent="254" name="subjects_id">
+    <column id="318" parent="254" name="subject_id">
       <Position>2</Position>
       <DataType>int(11)|0s</DataType>
       <NotNull>1</NotNull>
       <ColumnKind>normal</ColumnKind>
     </column>
     <index id="319" parent="254" name="tests_subjects_tests_id_fk">
-      <ColNames>tests_id</ColNames>
+      <ColNames>test_id</ColNames>
       <Type>btree</Type>
     </index>
     <index id="320" parent="254" name="tests_subjects_subjects_id_fk">
-      <ColNames>subjects_id</ColNames>
+      <ColNames>subject_id</ColNames>
       <Type>btree</Type>
     </index>
     <foreign-key id="321" parent="254" name="tests_subjects_tests_id_fk">
-      <ColNames>tests_id</ColNames>
+      <ColNames>test_id</ColNames>
       <RefSchemaName>aplexam</RefSchemaName>
       <RefTableName>tests</RefTableName>
       <RefColNames>id</RefColNames>
     </foreign-key>
     <foreign-key id="322" parent="254" name="tests_subjects_subjects_id_fk">
-      <ColNames>subjects_id</ColNames>
+      <ColNames>subject_id</ColNames>
       <RefSchemaName>aplexam</RefSchemaName>
       <RefTableName>subjects</RefTableName>
       <RefColNames>id</RefColNames>

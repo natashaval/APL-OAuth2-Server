@@ -7,26 +7,26 @@ questions, answers, tests
 
 Api link: http://localhost/apl/APL-OAuth2-Server/src/:moduleName/api/:controller/:action/:param
 
-## Groups
+## Groups (DONE)
 - getAll
 - getById
 - createGroup
 - updateGroup
 
-## Users
+## Users (DONE, except delete)
 - getAll
 - getById (mapping to App UserModel)
 - createUser
 - deleteUser (safe delete)
 - generateQR (library)
 
-## Modules
+## Modules (DONE)
 - getAll
 - getById
 - createModule
 - deleteById (check if belong to subjects)
 
-## Subjects
+## Subjects (DONE)
 - getAll (array of Subject objects + module object)
 - getById (Subject object + module object)
 - createSubject

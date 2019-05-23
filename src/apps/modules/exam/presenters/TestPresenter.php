@@ -45,8 +45,8 @@ class TestPresenter
 
     public static function convertAssign($data, TestRequest $request){
         $request->test_id = $data["test_id"];
-        $request->groups = $data["groups"];
-        $request->subjects = $data["subjects"];
+        if(isset($data["groups"])) $request->groups = $data["groups"];
+        if(isset($data["subjects"])) $request->subjects = $data["subjects"];
         return $request;
     }
 }
